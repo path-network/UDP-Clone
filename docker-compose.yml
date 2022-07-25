@@ -1,0 +1,48 @@
+version: "3.9"
+
+services:
+  sflow:
+    container_name: udp-clone-sflow
+    hostname: udp-clone-sflow
+    restart: unless-stopped
+    build:
+      dockerfile: Dockerfile
+
+    command: >
+       --listen-port=6343
+       --forward=10.208.0.7:6343
+       --forward=10.208.0.8:6343
+
+    ports:
+      - "6343:6343/udp"
+
+  netflow5:
+    container_name: udp-clone-netflow5
+    hostname: udp-clone-netflow5
+    restart: unless-stopped
+    build:
+      dockerfile: Dockerfile
+
+    command: >
+       --listen-port=2055
+       --forward=10.208.0.7:2055
+       --forward=10.208.0.8:2055
+
+    ports:
+      - "2055:2055/udp"
+
+  netflow9:
+    container_name: udp-clone-netflow9
+    hostname: udp-clone-netflow9
+    restart: unless-stopped
+    build:
+      dockerfile: Dockerfile
+
+    command: >
+       --listen-port=2057
+       --forward=10.208.0.7:2057
+       --forward=10.208.0.8:2057
+
+    ports:
+      - "2057:2057/udp"
+
