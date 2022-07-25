@@ -83,10 +83,11 @@ Use 'docker scan' to run Snyk tests against images to find vulnerabilities and l
 To run this project directly, build it manually using `go build`. 
 
 ```
-./udp-clone --listen-port=9500 --forward=192.0.2.1 --forward=198.51.100.5:9100
-time="2019-09-23T14:29:50+01:00" level=info msg="Server started" ip=0.0.0.0 port=9500
-time="2019-09-23T14:29:50+01:00" level=info msg="Forwarding target configured" addr="192.0.2.1:9500" num=1 total=2
-time="2019-09-23T14:29:50+01:00" level=info msg="Forwarding target configured" addr="198.51.100.5:9100" num=2 total=2
+❯ ./udp-clone --listen-port=9500 --forward=192.0.2.1 --forward=198.51.100.5:9100
+
+{"level":"info","message":"Server started","ip":"0.0.0.0","port":9500}
+{"level":"info","message":"Forwarding target configured","num":1,"total":2,"addr":"192.0.2.1:9500"}
+{"level":"info","message":"Forwarding target configured","num":2,"total":2,"addr":"198.51.100.5:9100"}
 ```
 
 The above command will:
