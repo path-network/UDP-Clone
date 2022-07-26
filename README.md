@@ -1,10 +1,10 @@
 # UDP Clone
 
-A tiny UDP proxy that can replicate traffic to one or more endpoints.
+A tiny high performace UDP proxy that can foward any generic UDP traffic to one or more endpoints.
 
 ## Why?
 
-We needed a way to take a stream of NetFlow/IPFIX/sFlow and send it to multiple endpoints(Prod, Staging, Testing). As this is a generic UDP replicator, it can be used for any traffic such as netflow, syslog etc.
+We needed a way to take a stream of NetFlow/IPFIX/sFlow and send it to multiple endpoints(Prod and Testing). 
 
 ## Usage
 
